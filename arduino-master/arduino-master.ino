@@ -22,8 +22,6 @@ void send(unsigned int n) {
 }
 
 void loop() {
-//  send(170);
-//  send(255);
     for (int i=0; i<255; i++) {
       send(i);
     }
