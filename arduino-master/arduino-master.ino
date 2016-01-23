@@ -12,17 +12,17 @@ void setup() {
 
 void send(unsigned int n) {
   Serial.print("Sending ");
-  Serial.print(n, HEX);
+  Serial.print(n);
   digitalWrite(chipSelectPin, LOW);
   unsigned int response = SPI.transfer(n);
   digitalWrite(chipSelectPin, HIGH);
   Serial.print(" .. received ");
-  Serial.println(response, HEX);
+  Serial.println(response);
   delay(100);
 }
 
 void loop() {
-    for (int i=0; i<255; i++) {
+    for (int i=0; i<127; i++) {
       send(i);
     }
 }
